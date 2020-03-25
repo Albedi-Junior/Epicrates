@@ -4,6 +4,6 @@ Tentar manter o fluxo de trabalho aprendido em aula.
 
 Dados ficticios.
 
-Oeganizão dos dados, leitura, explorando os dados, Médias para variavéis, Anova, Gráficos e Mapa.
+Organização dos dados, leitura, explorando os dados, Médias para variavéis, Anova, Gráficos e Mapa.
 
 
