@@ -167,3 +167,4 @@ plot(wrld_simpl, xlim=c(-90, -30), ylim=c(-60, 20),
 
 points(bradypus, pch=16, col="black", cex=0.5)
 
+
