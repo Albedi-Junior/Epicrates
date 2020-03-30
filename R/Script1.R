@@ -98,42 +98,40 @@ mean(Dados$Vent)
 mean(Dados$Sub)
 mean(Dados$Ctot)
 
-# Alálise de PCA
-## Criando subconjuntos de linhas e colunas para a análise
+####Alálise de PCA####
+#Criando subconjuntos de linhas e colunas para a análise#
 Dados_PCA <- Dados[1:38, 3:7]
 
-# Visualizar os dados
+#Visualizar os dados#
 View(Dados_PCA)
 
-# Gerando PCA
+#Gerando PCA#
 resu.pca <- prcomp(Dados_PCA)
 
 summary(resu.pca)
 
-# Extrair a proporção de variância dos valores de componentes principais
+#Extrair a proporção de variância dos valores de componentes principais#
 eig.val <- get_eigenvalue(resu.pca)
 eig.val
 
-# Plotar no gráfico mostrando a proporção de variância de cada variavel
+#Plotar no gráfico mostrando a proporção de variância de cada variavel#
 fviz_eig(resu.pca, addlabels = T, ylim = c(0,90))
 
-# Extrair os resultados das variaveis do PCA para plotar no gráfico
+#Extrair os resultados das variaveis do PCA para plotar no gráfico#
 var <- get_pca_var(resu.pca)
 ind <- get_pca_ind(resu.pca)
 
-# Plotar gráfico de PCA
+#Plotar gráfico de PCA#
 fviz_pca_var(resu.pca, col.var = "blue")
 
-# Criando grupo para cluster
+#Criando grupo para cluster#
 especie <- as.factor(Dados[ ,1])
 
-# Plotando com grupos
+#Plotando com grupos#
 fviz_pca(resu.pca, habillage = especie, title = )
 
-####Box plot#####
 
-
-
+####Boxplot#####
 par(mfrow=c(1, 1))        
 hist(Dados$Vent,main=NULL, las = 1, breaks = 4, ylab="Freqência", xlab="Ventrais")
 
@@ -142,7 +140,7 @@ plot(Dados$Sex, ylab="CompTotal", Dados$Ctot, xlab="Ventral")
 plot(Dados$Sex, ylab="Ventrais", Dados$Vent, xlab="Sexo")
 plot(Dados$SP, ylab="ventrais", Dados$Vent, xlab="Especies")
 
-#########plots cantinho do R#######
+##plots variaveis significativas##
 head(Dados)
 summary(Dados)
 plot(Dados$Vent, Dados$Ctot, las = 1)
@@ -152,10 +150,10 @@ plot(Dados$Vent, Dados$Ctot, las = 1, ylab="Comprimento Total",
      xlab="Nº Ventrais", pch=16)
 
 
-#####mapa######
+###mapa####
 data(wrld_simpl)
 read.csv2("Data/Dados_Map.csv")
-Map <- read.csv2("Data/Dados_Map.csv") #Mudando nome raiz#
+Map <- read.csv2("Data/Dados_Map.csv") 
 summary(Map)
 bradypus<-Map[,9:8]
 summary(bradypus)
