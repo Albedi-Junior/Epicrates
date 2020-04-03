@@ -111,7 +111,7 @@ resu.pca <- prcomp(Dados_PCA)
 summary(resu.pca)
 
 #Extrair a proporção de variância dos valores de componentes principais#
-eig.val <- get_eigenvalue(resu.pca)
+eig.val <-get_eigenvalue(resu.pca)
 eig.val
 
 #Plotar no gráfico mostrando a proporção de variância de cada variavel#
@@ -135,18 +135,21 @@ fviz_pca(resu.pca, habillage = especie, title = )
 par(mfrow=c(1, 1))        
 hist(Dados$Vent,main=NULL, las = 1, breaks = 4, ylab="Freqência", xlab="Ventrais")
 
-plot(Dados$Vent, ylab="CompTotal", Dados$Ctot, xlab="Ventral")
-plot(Dados$Sex, ylab="CompTotal", Dados$Ctot, xlab="Ventral")
-plot(Dados$Sex, ylab="Ventrais", Dados$Vent, xlab="Sexo")
-plot(Dados$SP, ylab="ventrais", Dados$Vent, xlab="Especies")
+plot(Dados$Vent, ylab="Comprimento Total", Dados$Ctot, xlab="Sexo")
+plot(Dados$Sex, ylab="Nº Escamas Ventrais", Dados$Vent, xlab="Sexo")
+plot(Dados$Sex, ylab="Comprimento Total", Dados$Ctot, xlab="Sexo")
+plot(Dados$SP, ylab="ventrais", Dados$Vent, xlab="Espécies")
 
 ##plots variaveis significativas##
 head(Dados)
 summary(Dados)
+
 plot(Dados$Vent, Dados$Ctot, las = 1)
+
 plot(Dados$Vent, Dados$Ctot, las = 1, ylab="Comprimento Total",
      xlab="Nº Ventrais")
-plot(Dados$Vent, Dados$Ctot, las = 1, ylab="Comprimento Total",
+
+plot(Dados$Sex, Dados$Ctot, las = 1, ylab="Comprimento Total",
      xlab="Nº Ventrais", pch=16)
 
 
